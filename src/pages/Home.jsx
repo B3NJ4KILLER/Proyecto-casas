@@ -1,24 +1,23 @@
-import React from "react";
+// import React from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/AboutSection";
+import ProcessSection from "../components/ProcessSection";
 
 const Home = () => {
   return (
-    <div>
-      {/* El Navbar y el HeroSection se superponen gracias a las posiciones CSS */}
+    <div className="bg-white">
+      {/* 1. Navbar y Portada */}
       <Navbar />
       <HeroSection />
 
-      {/* Espacio temporal para las siguientes secciones */}
-      <section className="py-20 container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Propiedades Destacadas
-        </h2>
-        <p className="text-center text-gray-500">
-          Próximamente aquí las tarjetas de propiedades...
-        </p>
-        <div className="h-96 bg-gray-100 rounded mt-8 animate-pulse"></div>
-      </section>
+      {/* 2. Sección "Sobre Mí" (Introducción personal) */}
+      <AboutSection />
+
+      {/* 3. Sección "Mi Método" (Proceso de trabajo) */}
+      <ProcessSection />
+
+      {/* 4. Sección Propiedades Destacadas */}
     </div>
   );
 };
