@@ -1,8 +1,9 @@
-// import React from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ProcessSection from "../components/ProcessSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -10,14 +11,12 @@ const Home = () => {
       {/* 1. Navbar y Portada */}
       <Navbar />
       <HeroSection />
-
-      {/* 2. Sección "Sobre Mí" (Introducción personal) */}
+      {/* 2. Sección "Sobre Mí" */}
       <AboutSection />
-
-      {/* 3. Sección "Mi Método" (Proceso de trabajo) */}
+      {/* 3. Sección "Mi Método" */}
       <ProcessSection />
-
-      {/* 4. Sección Propiedades Destacadas */}
+      {/* 5. FOOTER AL FINAL */}
+      <Footer /> {/* <--- 2. ÚSALO AQUÍ */}
     </div>
   );
 };
