@@ -1,13 +1,3 @@
-// function App() {
-//   return (
-//     <div className="bg-blue-900">
-//       <h1 className="text-3xl font-bold underline">Hola Mundooooo</h1>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 
