@@ -4,19 +4,20 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ProcessSection from "../components/ProcessSection";
 import Footer from "../components/Footer";
+import PropertiesSection from "../components/PropertiesSection";
 
 const Home = () => {
   return (
     <div className="bg-white">
-      {/* 1. Navbar y Portada */}
+      {/* Navbar y Portada */}
       <Navbar />
       <HeroSection />
-      {/* 2. Sección "Sobre Mí" */}
+      {/* Sección "Sobre Mí" */}
       <AboutSection />
-      {/* 3. Sección "Mi Método" */}
+      {/* Sección "Mi Método" */}
       <ProcessSection />
-      {/* 5. FOOTER AL FINAL */}
-      <Footer /> {/* <--- 2. ÚSALO AQUÍ */}
+      {/* FOOTER AL FINAL */}
+      <Footer /> {/* <---ÚSALO AQUÍ */}
     </div>
   );
 };

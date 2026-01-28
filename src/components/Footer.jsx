@@ -119,14 +119,7 @@ const Footer = () => {
                   Propiedades en Arriendo
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/nosotros"
-                  className="text-gray-400 hover:text-yellow-400 transition"
-                >
-                  Sobre Mí
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/contacto"

@@ -53,12 +53,6 @@ const Navbar = () => {
             <NavLink to="/arrendar" className={navLinkStyles}>
               Arrendar
             </NavLink>
-            {/* <NavLink to="/vender" className={navLinkStyles}>
-              Vender
-            </NavLink> */}
-            <NavLink to="/nosotros" className={navLinkStyles}>
-              Nosotros
-            </NavLink>
             <NavLink to="/contacto" className={navLinkStyles}>
               Contacto
             </NavLink>
