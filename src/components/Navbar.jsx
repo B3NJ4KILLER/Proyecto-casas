@@ -43,7 +43,7 @@ const Navbar = () => {
 
           {/* --- MENÚ DE ESCRITORIO --- */}
           {/* Aquí aplicamos NavLink y navLinkStyles */}
-          <div className="hidden md:flex space-x-10 items-center">
+          <div className="hidden md:flex space-x-10 items-center text-shadow-lg/20">
             <NavLink to="/" className={navLinkStyles} end>
               Inicio
             </NavLink>

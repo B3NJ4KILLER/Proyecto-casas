@@ -32,7 +32,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative h-[700px] flex items-center justify-center bg-gray-900 overflow-hidden group">
+    <div className="relative h-[500px] md:h-[700px] flex items-center justify-center bg-gray-900 overflow-hidden group">
       {/* --- 1. IMÁGENES DEL CARRUSEL (Llenan el contenedor) --- */}
       {slides.map((slide, index) => (
         <div
@@ -122,10 +122,10 @@ const HeroSection = () => {
 
       {/* --- AQUÍ PUEDES PONER TEXTO ENCIMA DEL CARRUSEL SI QUIERES --- */}
       <div className="relative z-20 text-center px-4 animate-fade-in-up">
-        <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
+        <h1 className="text-shadow-lg/30 text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
           Encuentra tu próximo hogar
         </h1>
-        <p className="text-xl text-gray-200 drop-shadow-md">
+        <p className="text-shadow-lg/30 text-2xl text-gray-200">
           Venta y Arriendo de Propiedades Exclusivas
         </p>
       </div>
