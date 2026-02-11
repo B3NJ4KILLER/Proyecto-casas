@@ -26,15 +26,15 @@ const AboutSection = () => {
               tu aliada inmobiliaria.
             </h3>
             <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-              Hola, soy <strong>[Nombre de la Persona]</strong>. Con más de 10
-              años en el mercado de [Tu Ciudad], me dedico a conectar personas
-              con sus nuevos comienzos.
+              Hola, soy <strong>Nelly Villalobos</strong>. Con experiencia en el
+              mercado de la tercera Región, me dedico a conectar personas con
+              sus nuevos comienzos.
             </p>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               Entiendo que vender o arrendar una propiedad no es solo un
               trámite, es una decisión de vida. Por eso, mi enfoque es 100%
-              personalizado: yo me encargo del papeleo, las visitas y la
-              negociación, para que tú solo disfrutes del resultado.
+              personalizado: yo me encargo de los tramites legales, las visitas
+              y la negociación, para que tú solo disfrutes del resultado.
             </p>
 
             {/* Firma o botón */}

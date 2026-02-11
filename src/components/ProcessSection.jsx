@@ -49,7 +49,7 @@ const steps = [
       </svg>
     ),
     features: [
-      "Fotos profesionales",
+      "Fotos de Calidad",
       "Filtro de interesados",
       "Revisión Dicom",
       "Seguridad en visitas",

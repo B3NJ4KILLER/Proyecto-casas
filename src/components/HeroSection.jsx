@@ -126,7 +126,7 @@ const HeroSection = () => {
           Encuentra tu próximo hogar
         </h1>
         <p className="text-shadow-lg/30 text-2xl text-gray-200">
-          Venta y Arriendo de Propiedades Exclusivas
+          Venta y Arriendo de Propiedades
         </p>
       </div>
     </div>
