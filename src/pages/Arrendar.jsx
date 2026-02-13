@@ -22,6 +22,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PropertiesSection from "../components/PropertiesSection";
+import imagenArrendar from "../assets/arrendar.avif";
 
 const Arrendar = () => {
   return (
@@ -32,7 +33,7 @@ const Arrendar = () => {
       <div className="relative h-[400px] flex items-center justify-center">
         {/* Imagen de Fondo (Tema: Interior / Arriendo) */}
         <img
-          src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop"
+          src={imagenArrendar}
           alt="Propiedades en Arriendo"
           className="absolute inset-0 w-full h-full object-cover"
         />

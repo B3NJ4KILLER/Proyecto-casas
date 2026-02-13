@@ -23,6 +23,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PropertiesSection from "../components/PropertiesSection";
+import imagenCompra from "../assets/comprar.avif";
 
 const Comprar = () => {
   return (
@@ -34,7 +35,7 @@ const Comprar = () => {
       <div className="relative h-[400px] flex items-center justify-center">
         {/* Imagen de Fondo (Tema: Venta / Lujo) */}
         <img
-          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
+          src={imagenCompra}
           alt="Propiedades en Venta"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -43,10 +44,10 @@ const Comprar = () => {
 
         {/* Título de la Página */}
         <div className="relative z-10 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 text-shadow-lg/20">
             Comprar
           </h1>
-          <p className="text-xl text-gray-200">
+          <p className="text-xl text-gray-200 text-shadow-lg/20">
             Encuentra el lugar donde empieza tu nueva historia
           </p>
         </div>

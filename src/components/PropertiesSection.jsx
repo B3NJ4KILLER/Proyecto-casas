@@ -1,156 +1,27 @@
-// import React from "react";
-// import { propiedades } from "../data/Propiedades";
-
-// const PropertiesSection = ({ filtro, titulo }) => {
-//   // Lógica de Filtrado (Igual que antes)
-//   const propiedadesFiltradas = filtro
-//     ? propiedades.filter((casa) => casa.tipo === filtro)
-//     : propiedades;
-
-//   // --- NUEVA FUNCIÓN: Decide el color según el estado ---
-//   const getStatusBadge = (estado) => {
-//     switch (estado) {
-//       case "vendido":
-//       case "arrendado":
-//         return (
-//           <span className="bg-red-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
-//             Vendido
-//           </span>
-//         );
-//       case "reservado":
-//         return (
-//           <span className="bg-orange-500 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
-//             Reservado
-//           </span>
-//         );
-//       case "nuevo":
-//         return (
-//           <span className="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
-//             Nuevo
-//           </span>
-//         );
-//       default:
-//         // Si es "disponible" o no tiene estado, mostramos "Disponible" en verde (o puedes retornar null para no mostrar nada)
-//         return (
-//           <span className="bg-green-500 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
-//             Disponible
-//           </span>
-//         );
-//     }
-//   };
-
-//   return (
-//     <section className="py-20 bg-white min-h-screen">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="text-center mb-12">
-//           {titulo && (
-//             <h2 className="text-3xl font-bold text-gray-900 mb-4">{titulo}</h2>
-//           )}
-//           <p className="text-gray-500 max-w-2xl mx-auto">
-//             Revisa nuestra selección exclusiva.
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//           {propiedadesFiltradas.length > 0 ? (
-//             propiedadesFiltradas.map((propiedad) => (
-//               <div
-//                 key={propiedad.id}
-//                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-gray-100 group relative"
-//               >
-//                 {/* Imagen de la casa */}
-//                 <div className="relative h-64 overflow-hidden">
-//                   {/* --- LÓGICA VISUAL SI ESTÁ VENDIDO --- */}
-//                   {/* Si está vendido, ponemos la imagen en blanco y negro (grayscale) para que se note menos */}
-//                   <img
-//                     src={propiedad.img}
-//                     alt={propiedad.titulo}
-//                     className={`w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ${propiedad.estado === "vendido" ? "grayscale opacity-70" : ""}`}
-//                   />
-
-//                   {/* ETIQUETA DE PRECIO (Arriba Derecha) */}
-//                   <div className="absolute top-4 right-4 bg-yellow-500 text-black font-bold px-4 py-1 rounded-full text-sm shadow-md">
-//                     {propiedad.precio}
-//                   </div>
-
-//                   {/* --- AQUÍ VA EL NUEVO ESTADO (Arriba Izquierda) --- */}
-//                   <div className="absolute top-4 left-4 z-10">
-//                     {getStatusBadge(propiedad.estado)}
-//                   </div>
-
-//                   {/* ETIQUETA TIPO (Abajo Izquierda) */}
-//                   <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded text-xs uppercase tracking-wider">
-//                     {propiedad.tipo}
-//                   </div>
-//                 </div>
-
-//                 <div className="p-6">
-//                   <h3 className="text-xl font-bold text-gray-900 mb-2 truncate">
-//                     {propiedad.titulo}
-//                   </h3>
-//                   <p className="text-gray-500 text-sm mb-4 line-clamp-2">
-//                     Hermosa propiedad ubicada en sector exclusivo, ideal para
-//                     familias que buscan tranquilidad y seguridad.
-//                   </p>
-
-//                   {/* Botón: Si está vendido, cambiamos el texto y deshabilitamos el click */}
-//                   {propiedad.estado === "vendido" ? (
-//                     <button
-//                       disabled
-//                       className="w-full block text-center bg-gray-300 text-gray-500 font-medium py-3 rounded-lg cursor-not-allowed"
-//                     >
-//                       No Disponible
-//                     </button>
-//                   ) : (
-//                     <button className="w-full block text-center bg-gray-900 text-white font-medium py-3 rounded-lg hover:bg-blue-900 transition-colors">
-//                       Ver Detalles
-//                     </button>
-//                   )}
-//                 </div>
-//               </div>
-//             ))
-//           ) : (
-//             <div className="col-span-3 text-center py-10">
-//               <p className="text-gray-500 text-lg">
-//                 No hay propiedades disponibles en esta categoría por el momento.
-//               </p>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default PropertiesSection;
-
 import React, { useState } from "react";
 import { propiedades } from "../data/Propiedades";
+import { Link } from "react-router-dom";
 
 const PropertiesSection = ({ filtro, titulo }) => {
-  // 1. ESTADOS PARA LOS FILTROS
-  // Al principio están vacíos ("") para mostrar todo
+  // ESTADOS PARA LOS FILTROS
   const [filtroComuna, setFiltroComuna] = useState("");
   const [filtroCategoria, setFiltroCategoria] = useState("");
 
-  // 2. FUNCIÓN DE FILTRADO INTELIGENTE
-  // Filtra primero por "Venta/Arriendo" (que viene de las props)
-  // Y luego revisa si el usuario seleccionó alguna comuna o categoría
+  // FUNCIÓN DE FILTRADO INTELIGENTE
+  // Filtra primero por "Venta/Arriendo"
+  // Y luego revisa si el usuario selecciono alguna comuna o categoria
   const propiedadesFiltradas = propiedades.filter((propiedad) => {
-    // Primero: Validar si es Venta o Arriendo
     if (filtro && propiedad.tipo !== filtro) return false;
 
-    // Segundo: Validar Comuna (si hay alguna seleccionada)
     if (filtroComuna && propiedad.comuna !== filtroComuna) return false;
 
-    // Tercero: Validar Categoría (si hay alguna seleccionada)
     if (filtroCategoria && propiedad.categoria !== filtroCategoria)
       return false;
 
-    return true; // Si pasa todas las pruebas, se muestra
+    return true;
   });
 
-  // Función para las etiquetas de estado (Colores)
+  // Función para las etiquetas de estado
   const getStatusBadge = (estado) => {
     switch (estado) {
       case "vendido":
@@ -229,7 +100,6 @@ const PropertiesSection = ({ filtro, titulo }) => {
                 <option value="Casa">Casas</option>
                 <option value="Departamento">Departamentos</option>
                 <option value="Terreno">Terrenos</option>
-                <option value="Oficina">Oficinas</option>
               </select>
             </div>
 
@@ -296,9 +166,12 @@ const PropertiesSection = ({ filtro, titulo }) => {
                         No Disponible
                       </button>
                     ) : (
-                      <button className="w-full bg-gray-900 text-white font-medium py-3 rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/20">
+                      <Link
+                        to={`/propiedad/${propiedad.id}`}
+                        className="w-full block text-center bg-gray-900 text-white font-medium py-3 rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/20"
+                      >
                         Ver Detalles
-                      </button>
+                      </Link>
                     )}
                   </div>
                 </div>
