@@ -104,35 +104,64 @@ const PropiedadDetalle = () => {
                 {propiedad.precio}
               </p>
 
+              {/* --- DESCRIPCIÓN DINÁMICA --- */}
               <div className="prose text-gray-600 mb-8 leading-relaxed">
                 <p>
-                  Esta es una excelente oportunidad en {propiedad.comuna}. La
-                  propiedad destaca por su excelente ubicación y conectividad.
-                  Ideal para quienes buscan{" "}
-                  {propiedad.tipo === "Venta"
-                    ? "invertir en patrimonio"
-                    : "vivir con comodidad"}
-                  .
-                </p>
-                <p className="mt-4">
-                  Cuenta con espacios amplios, excelente iluminación natural y
-                  terminaciones de calidad. Contáctanos para agendar una visita.
+                  {propiedad.descripcion ||
+                    "Esta es una excelente oportunidad. Contáctanos para conocer más detalles sobre las características de esta propiedad y agendar una visita."}
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-8 border-y border-gray-200 py-6">
+              {/* --- DETALLES TÉCNICOS DINÁMICOS --- */}
+              {/* Cambiamos a md:grid-cols-4 para que quepan los datos nuevos uno al lado del otro */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 border-y border-gray-200 py-6">
                 <div>
                   <span className="block text-gray-400 text-sm">Estado</span>
                   <span className="font-semibold text-gray-900 capitalize">
                     {propiedad.estado}
                   </span>
                 </div>
+
                 <div>
                   <span className="block text-gray-400 text-sm">Operación</span>
                   <span className="font-semibold text-gray-900">
                     {propiedad.tipo}
                   </span>
                 </div>
+
+                {/* Si la propiedad tiene "habitaciones" en la base de datos, mostramos esta cajita */}
+                {propiedad.habitaciones && (
+                  <div>
+                    <span className="block text-gray-400 text-sm">
+                      Habitaciones
+                    </span>
+                    <span className="font-semibold text-gray-900">
+                      {propiedad.habitaciones}
+                    </span>
+                  </div>
+                )}
+
+                {/* Si la propiedad tiene "banos", mostramos esta cajita */}
+                {propiedad.banos && (
+                  <div>
+                    <span className="block text-gray-400 text-sm">Baños</span>
+                    <span className="font-semibold text-gray-900">
+                      {propiedad.banos}
+                    </span>
+                  </div>
+                )}
+
+                {/* Si la propiedad tiene "m2", mostramos esta cajita */}
+                {propiedad.m2 && (
+                  <div>
+                    <span className="block text-gray-400 text-sm">
+                      Superficie
+                    </span>
+                    <span className="font-semibold text-gray-900">
+                      {propiedad.m2} m²
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="mt-auto space-y-3">
