@@ -7,7 +7,7 @@ export const propiedades = [
     titulo: "Casa Amplia en Sector El Palomar",
     precio: "UF 4.500",
     tipo: "Venta",
-    estado: "disponible",
+    estado: "vendido",
     comuna: "Copiapó",
     categoria: "Casa",
     img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop",

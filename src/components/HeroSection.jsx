@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
+// 1. IMPORTACIÓN DE TU IMAGEN
+// ¡OJO! Asegúrate de que el archivo se llame EXACTAMENTE "carousel-1.avif" y esté dentro de "src/assets"
+import foto1 from "../assets/carousel1.avif";
 
 const HeroSection = () => {
   // --- CONFIGURACIÓN DEL CARRUSEL ---
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Imágenes
+  // 2. TUS IMÁGENES MÁS LA LOCAL
   const slides = [
     "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop",
+    foto1, // <-- Tu imagen local aparece en el 4to lugar
   ];
 
   // Funciones de control
@@ -46,8 +49,8 @@ const HeroSection = () => {
             className="absolute block w-full h-full object-cover"
             alt={`Slide ${index + 1}`}
           />
-
-          <div className="absolute inset-0 "></div>
+          {/* Capa oscura semitransparente para que el texto resalte */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
       ))}
 
@@ -126,7 +129,7 @@ const HeroSection = () => {
           Encuentra tu próximo hogar
         </h1>
         <p className="text-shadow-lg/30 text-2xl text-gray-200">
-          Venta y Arriendo de Propiedades
+          Venta y Arriendo de Propiedades en Atacama
         </p>
       </div>
     </div>

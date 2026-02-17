@@ -28,7 +28,7 @@ const PropertiesSection = ({ filtro, titulo }) => {
       case "arrendado":
         return (
           <span className="bg-red-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
-            No Disponible
+            Vendida
           </span>
         );
       case "reservado":
